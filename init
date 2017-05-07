@@ -1,0 +1,10 @@
+﻿#!/usr/bin/env bash
+
+echo 'create database...'
+wget https://raw.githubusercontent.com/bo-su/docker-inetllij/master/createdb.sql .
+wget https://raw.githubusercontent.com/bo-su/docker-inetllij/master/init.sql .
+wget https://raw.githubusercontent.com/bo-su/docker-inetllij/master/pscdb.sql .
+
+mysql -h localhost -u root -pmy-secret-pw ./createdb.sql
+mysql -h localhost -u root -pmy-secret-pw ./init.sql
+mysql -h localhost -u root -pmy-secret-pw ./pscdb.sql
